@@ -22,7 +22,7 @@ function App() {
   return (
       <HeroesContext.Provider value={contextValue}>
         <h1>{title}</h1>
-        <HashRouter basename={process.env.PUBLIC_URL}>
+        <HashRouter>
           <nav>
             <NavLink to="/dashboard">Dashboard</NavLink>
             <NavLink to="/heroes">Heroes</NavLink>
