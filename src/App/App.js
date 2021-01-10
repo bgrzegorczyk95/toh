@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Route, NavLink, HashRouter } from 'react-router-dom';
+import { Route, NavLink, BrowserRouter as Router } from 'react-router-dom';
 
 import Dashboard from '../Dashboard/Dashboard';
 import Hero from '../Hero/Hero';
@@ -22,7 +22,7 @@ function App() {
   return (
       <HeroesContext.Provider value={contextValue}>
         <h1>{title}</h1>
-        <HashRouter basename={process.env.PUBLIC_URL}>
+        <Router basename={process.env.PUBLIC_URL}>
           <nav>
             <NavLink to="/dashboard">Dashboard</NavLink>
             <NavLink to="/heroes">Heroes</NavLink>
@@ -31,7 +31,7 @@ function App() {
           <Route path="/heroes" component={Heroes} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/details/:id" component={Hero} />
-        </HashRouter>
+        </Router>
       </HeroesContext.Provider>
   );
 }
